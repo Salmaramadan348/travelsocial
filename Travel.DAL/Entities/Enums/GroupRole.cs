@@ -9,6 +9,9 @@ namespace Travel.DAL.Entities.Enums
 	// admin , member , 
 	public enum GroupRole
 	{
-		Admin,Member
-	}
+		Admin,
+		Member,
+        Moderator,
+		Owner
+    }
 }

@@ -9,9 +9,8 @@ namespace Travel.DAL.Entities.Models
 {
 	public class User
 	{
-	    public User() { }
-
-		public User(string? bio=null,  TravelState travel = TravelState.NotTravelling, string? createdBy = null,string ? profileImage=null)
+        public User() { }
+        public User(string? bio=null,  TravelState travel = TravelState.NotTravelling, string? createdBy = null,string ? profileImage=null)
 		{
 			BIO = bio;
 			ProfileImage = profileImage;
@@ -37,9 +36,13 @@ namespace Travel.DAL.Entities.Models
 		public DateTime? DeletedOn { get; private set; }
 
 		public bool IsDeleted { get; private set; }
-        
+        public ICollection<GroupMembership> GroupMemberships { get; set; }
 
-		//
+        public void SoftDelete()
+        {
+            IsDeleted = true;
+            DeletedOn = DateTime.Now;
+        }
 
-	}
+    }
 }

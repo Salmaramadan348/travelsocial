@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Travel.DAL.Entities.Models
+namespace Travel.DAL.Entities.Enums
 {
-	internal class Class1
-	{
-	}
+    public enum GroupPrivacy
+    {
+        Private,
+        Public
+    }
 }
